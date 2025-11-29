@@ -1,15 +1,43 @@
 package com.donacionesLt.entities;
 
+import java.util.UUID;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name="donacion")
 public class Donacion {
-private int id; 
-private int monto; 
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private int id;
+@Column(name = "nombre")
+private String nombre; 
+@Column(name = "apellido")
+private String apellido;
+@Column(name = "correo")
+private String correo;
+@Column(name = "monto")
+private int monto;
+@Column(name = "pagado")
+private boolean pagado;
+@Column(name = "uuid")
+private UUID uuid;
 
 public Donacion(){
 
 }
-public Donacion(int id, int monto){
+
+public Donacion(int id, String nombre, String apellido, String correo, int monto, boolean pagado, String uuid){
     this.id = id;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.correo = correo;
     this.monto = monto;
+    this.pagado = pagado;
+    this.uuid = UUID.randomUUID();
 }
 
 public int getId(){
@@ -18,19 +46,53 @@ public int getId(){
 public void setId(int id){
     this.id = id;
 }
-
+public String getNombre(){
+    return nombre;
+}
+public void setNombre(String nombre){
+    this.nombre = nombre;
+}
+public String getApellido(){
+    return apellido;
+}
+public void setApellido(String apellido){
+    this.apellido = apellido;
+}
+public String getCorreo(){
+    return correo;
+}
+public void setCorreo(String correo){
+    this.correo = correo;
+}
 public int getMonto(){
     return monto;
 }
-
 public void setMonto(int monto){
     this.monto = monto;
 }
 
+    public boolean isPagado() {
+        return this.pagado;
+    }
+
+    public boolean getPagado() {
+        return this.pagado;
+    }
+
+    public void setPagado(boolean pagado) {
+        this.pagado = pagado;
+    }
+
+    public UUID getUuid() {
+        return this.uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+
+
 
 
 }
-
-
-
-

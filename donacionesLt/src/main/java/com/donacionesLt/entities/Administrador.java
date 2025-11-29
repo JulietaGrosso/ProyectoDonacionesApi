@@ -1,11 +1,21 @@
 package com.donacionesLt.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-
+@Entity(name="administrador")
 public class Administrador {
+@Id   
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
+@Column(name = "nombre")
 private String nombre;
+@Column(name = "correo")
 private String correo;
+@Column(name = "contrasena")
 private String contrasena; 
 
 public Administrador(){
@@ -44,7 +54,8 @@ public void setContrasena(String contrasena){
 }
 
 
-
+//En este caso el administrador puede ver los registros de las donaciones.
+//Get: para obtener la lista. 
 
 
 }

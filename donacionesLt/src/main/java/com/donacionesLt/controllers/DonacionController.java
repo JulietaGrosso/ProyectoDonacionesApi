@@ -1,0 +1,30 @@
+package com.donacionesLt.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.donacionesLt.Services.DonacionService;
+import com.donacionesLt.dtos.DonacionDto;
+import com.donacionesLt.entities.Donacion;
+
+@RestController
+@RequestMapping("donacion")
+public class DonacionController {
+
+    @Autowired
+    private DonacionService donacionService;
+
+    @PostMapping
+    public ResponseEntity<Donacion> postDonacion(@RequestBody DonacionDto donaciondto){
+       
+        return ResponseEntity.ok().body(donacionService.guardarDonacion(donaciondto));
+    }
+    
+
+
+
+}
