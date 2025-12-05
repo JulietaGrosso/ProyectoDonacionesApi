@@ -1,7 +1,6 @@
 package com.donacionesLt.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.donacionesLt.Services.DonacionService;
 import com.donacionesLt.dtos.DonacionDto;
-import com.donacionesLt.entities.Donacion;
 import com.donacionesLt.entities.LinkPago;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
@@ -28,9 +26,7 @@ public class DonacionController {
         String link = donacionService.guardarDonacion(donaciondto);
         LinkPago linkPago = new LinkPago(link);
         return ResponseEntity.ok().body(linkPago);
-        
     }
-    
 
 
 }

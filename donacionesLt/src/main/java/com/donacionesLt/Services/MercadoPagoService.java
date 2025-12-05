@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,8 +54,6 @@ public class MercadoPagoService {
   }
 
   public boolean paymentNotification(String paymentUuid, JsonNode payload) throws MPException, MPApiException{
-    String json = payload.toPrettyString();
-
     JsonNode topic = payload.get("topic");
 
     if ( topic.isTextual() && topic.asText().equals("merchant_order")) {
