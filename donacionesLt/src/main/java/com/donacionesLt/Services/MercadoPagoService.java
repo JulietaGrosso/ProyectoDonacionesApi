@@ -95,7 +95,7 @@ public class MercadoPagoService {
     PreferenceRequest preferenceRequest = PreferenceRequest.builder()
         .items(items)
         .externalReference(paymentId)
-        .notificationUrl("http://104.251.222.158:140023/mercadopago/notification/" + paymentId) // No borrar ni descomentar.
+        .notificationUrl("http://104.251.222.158:9929/mercadopago/notification/" + paymentId) // No borrar ni descomentar.
         .backUrls(backUrls)
         .build();
 
