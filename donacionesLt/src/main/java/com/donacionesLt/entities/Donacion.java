@@ -1,5 +1,6 @@
 package com.donacionesLt.entities;
 
+import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -24,20 +25,21 @@ private int monto;
 @Column(name = "pagado")
 private boolean pagado;
 @Column(name = "uuid")
-private UUID uuid;
+private String uuid;
+@Column(name = "fecha")
+private Date fechaPago;
 
 public Donacion(){
 
 }
 
-public Donacion(int id, String nombre, String apellido, String correo, int monto, boolean pagado, String uuid){
+public Donacion(int id, String nombre, String apellido, String correo, int monto, boolean pagado){
     this.id = id;
     this.nombre = nombre;
     this.apellido = apellido;
     this.correo = correo;
     this.monto = monto;
     this.pagado = pagado;
-    this.uuid = UUID.randomUUID();
 }
 
 public int getId(){
@@ -83,14 +85,22 @@ public void setMonto(int monto){
         this.pagado = pagado;
     }
 
-    public UUID getUuid() {
+    public String getUuid() {
         return this.uuid;
     }
 
-    public void setUuid(UUID uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
+
+    public Date getFechaPago() {
+        return this.fechaPago;
+    }
+
+    public void setFechaPago(Date fechaPago) {
+        this.fechaPago = fechaPago;
+    }
 
 
 

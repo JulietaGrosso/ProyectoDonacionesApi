@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-public class DonacionDto {
+public class    DonacionDto {
 
     private int id;
     private String nombre; 
@@ -13,8 +13,8 @@ public class DonacionDto {
     private String correo;
     private int monto;
     private boolean pagado;
-
-
+    private int idInstitucion;
+    
 
 
     public int getId() {
@@ -69,6 +69,14 @@ public class DonacionDto {
         this.pagado = pagado;
     }
 
+
+    public int getIdInstitucion() {
+        return this.idInstitucion;
+    }
+
+    public void setIdInstitucion(int idInstitucion) {
+        this.idInstitucion = idInstitucion;
+    }
    
 
 
